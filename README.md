@@ -2,14 +2,16 @@ Anax comment
 ==================================
 
 
-Anax comment module.
+Anax comment module with user and admin integration.
 
 
 
-Usage
+Installation
 ------------------
 
-Short examples on how to use the module comment.
+Stand in
+
+
 
 
 
