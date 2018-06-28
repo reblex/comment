@@ -4,7 +4,7 @@ namespace Anax\User\HTMLForm;
 
 use \Anax\HTMLForm\FormModel;
 use \Anax\DI\DIInterface;
-use \Anax\User\User;
+use \reblex\User\User;
 
 /**
  * Example of FormModel implementation.

@@ -4,8 +4,8 @@ namespace Anax\Comment\HTMLForm;
 
 use \Anax\HTMLForm\FormModel;
 use \Anax\DI\DIInterface;
-use \Anax\Comment\Comment;
-use \Anax\User\User;
+use \reblex\Comment\Comment;
+use \reblex\User\User;
 
 /**
  * Example of FormModel implementation.
