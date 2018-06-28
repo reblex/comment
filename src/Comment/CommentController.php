@@ -4,8 +4,8 @@ namespace reblex\Comment;
 
 use \Anax\DI\InjectionAwareInterface;
 use \Anax\DI\InjectionAwareTrait;
-use \Anax\User\User;
-use \Anax\Comment\Comment;
+use \reblex\User\User;
+use \reblex\Comment\Comment;
 use \Anax\Comment\HTMLForm\CreateCommentForm;
 use \Anax\Comment\HTMLForm\EditCommentForm;
 
