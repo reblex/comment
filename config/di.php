@@ -23,16 +23,6 @@ return [
                 return $obj;
             }
         ],
-        "session" => [
-            "shared" => true,
-            "active" => true,
-            "callback" => function () {
-                $session = new \Anax\Session\SessionConfigurable();
-                $session->configure("session.php");
-                $session->start();
-                return $session;
-            }
-        ],
         "db" => [
             "shared" => true,
             "callback" => function () {
