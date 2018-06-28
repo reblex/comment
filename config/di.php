@@ -10,7 +10,7 @@ return [
         "commentController" => [
             "shared" => true,
             "callback" => function () {
-                $obj = new Anax\Comment\CommentController();
+                $obj = new reblex\Comment\CommentController();
                 $obj->setDI($this);
                 return $obj;
             }
@@ -18,7 +18,7 @@ return [
         "userController" => [
             "shared" => true,
             "callback" => function () {
-                $obj = new \Anax\User\UserController();
+                $obj = new \reblex\User\UserController();
                 $obj->setDI($this);
                 return $obj;
             }
