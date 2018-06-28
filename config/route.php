@@ -10,12 +10,12 @@ return [
         [
             // To read flat file content in Markdown from content/
             "mount" => null,
-            "file" => __DIR__ . "/route2/comment.php",
+            "file" => __DIR__ . "/route/comment.php",
         ],
         [
             // Add routes from userController and mount on user/
             "mount" => "user",
-            "file" => __DIR__ . "/route2/userController.php",
+            "file" => __DIR__ . "/route/userController.php",
         ],
     ],
 
