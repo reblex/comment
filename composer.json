@@ -18,7 +18,8 @@
     },
     "autoload": {
         "psr-4": { 
-            "Anax\\": "src/"
+            "Anax\\": "src/",
+            "reblex\\": "src/"
         }
     },
     "require": {
