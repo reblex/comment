@@ -125,7 +125,8 @@ return [
                 $obj = new Anax\Database\DatabaseQueryBuilder();
 
                 $obj->configure([
-                    "dsn"             => "sqlite:" . __DIR__ . "/db.sqlite",
+                    // "dsn"             => "sqlite:" . __DIR__ . "/db.sqlite",
+                    "dsn"             => "sqlite::memory:",
                     "username"        => null,
                     "password"        => null,
                     "driver_options"  => null,
@@ -140,6 +141,25 @@ return [
 
                 $sql = 'DROP TABLE IF EXISTS `comments`;';
                 $obj->execute($sql);
+                
+                $sql = 'DROP TABLE IF EXISTS `User`;';
+                $obj->execute($sql);
+
+                $sql = 'CREATE TABLE User (
+                    `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                    `username` VARCHAR(80) UNIQUE NOT NULL,
+                    `email` VARCHAR(225) UNIQUE NOT NULL,
+                    `password` VARCHAR(255) NOT NULL,
+                    `admin` INTEGER NOT NULL
+                );';
+                $obj->execute($sql);
+
+                $sql = 'INSERT INTO `User` (`username`, `email`, `password`, `admin`) VALUES
+                ("user", "user@user.com", "$2y$10$0fwmQmv5iZP86a/yPnDj0uoH8W.n8IhhbbePs2w8KRrtPeqeD7lqi", 0),
+                ("admin", "admin@admin.com", "$2y$10$jQGcqEbKEx.IxbBsld.cBuJ1amDPy8QP8eELsyU9qD2np9cMAmYDa", 1)
+                ;';
+                $obj->execute($sql);
+
 
                 $sql = 'CREATE TABLE `comments`
                 (
@@ -148,9 +168,6 @@ return [
                     `datetime` DATETIME,
                     `content` VARCHAR(800)
                 );';
-                $obj->execute($sql);
-
-                $sql = 'DELETE FROM `comments`;';
                 $obj->execute($sql);
 
                 $sql = 'INSERT INTO `comments` (`userId`, `content`) VALUES
