@@ -16,7 +16,8 @@ build:
     tests:
         override:
             -
-                command: "phpunit --configuration .phpunit.xml"
+                # command: "phpunit --configuration .phpunit.xml"
+                command: "vendor/bin/phpunit ---configuration .phpunit.xml --coverage-clover=build/coverage.clover"
                 coverage:
                     file: "build/coverage.clover"
                     format: "php-clover"
