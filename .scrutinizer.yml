@@ -1,12 +1,14 @@
-imports:
-    - php
-        version: 7.1 
+# imports:
+#     - php
+#         version: 7.1
 
 filter:
     excluded_paths: [vendor/*, test/*]
 
 build:
-
+    environment:
+        php:
+            version: 7.1
     dependencies:
         before:
             -
