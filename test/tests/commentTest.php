@@ -52,4 +52,29 @@ final class CommentTest extends TestCase
         $formHTML = $form->getHTML();
         $this->assertEquals(is_string($formHTML), true);
     }
+
+    public function testCheckUserPassoword()
+    {
+        $user = new User();
+        $user->setDb(self::$di->get("db"));
+        $user->find("id", 1);
+
+        $res = $user->verifyPassword("user", "user");
+
+        $this->assertEquals($res, true);
+    }
+
+    public function testChangeUserPassoword()
+    {
+        $user = new User();
+        $user->setDb(self::$di->get("db"));
+        $user->find("id", 1);
+
+        $user->setPassword("new");
+        $user->save();
+
+        $res = $user->verifyPassword("user", "new");
+
+        $this->assertEquals($res, true);
+    }
 }
