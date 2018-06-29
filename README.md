@@ -1,6 +1,6 @@
 Anax comment
 ==================================
-
+[![Build Status](https://travis-ci.org/reblex/comment.svg?branch=master)](https://travis-ci.org/reblex/comment)
 
 Anax comment module with user and admin integration.
 
