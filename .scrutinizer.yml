@@ -1,5 +1,6 @@
 imports:
     - php
+        version: 7.1 
 
 filter:
     excluded_paths: [vendor/*, test/*]
